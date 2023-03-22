@@ -1,11 +1,11 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnChanges {
+export class AppComponent implements OnChanges, OnInit {
   title = 'curso-angular';
 
   constructor() {
@@ -13,7 +13,12 @@ export class AppComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    //* Como este componente no tiene ninguna variable anotada con @Input es que no se ejecuta este método
     console.log('2° app.component -> ngOnChanges');
+  }
+
+  ngOnInit(): void {
+    console.log('3° app.component -> ngOnInit');
   }
 
   getMessage(value: string): void {
