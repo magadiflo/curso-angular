@@ -8,7 +8,7 @@ import { MyComponent2Component } from './my-component2/my-component2.component';
 })
 export class AppComponent implements OnInit, DoCheck, AfterViewInit, AfterViewChecked {
   title = 'curso-angular';
-  show = false;
+  show = true;
 
   @ViewChild(MyComponent2Component) viewChild: MyComponent2Component | undefined;
 
@@ -44,6 +44,6 @@ export class AppComponent implements OnInit, DoCheck, AfterViewInit, AfterViewCh
 
   clickChangeTitle(): void {
     this.title = 'Título cambiado!!!';
-    this.show = true;
+    this.show = false;
   }
 }

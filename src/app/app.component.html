@@ -1,6 +1,6 @@
 <app-my-component1 [title]="title" (sendMessage)="getMessage($event)"></app-my-component1>
-<app-my-component2>
-    <h2 *ngIf="show" #childComponent2>Contenido dentro de las etiquetas...</h2>
+<app-my-component2 *ngIf="show">
+    <h2 #childComponent2>Contenido dentro de las etiquetas...</h2>
 </app-my-component2>
 <button type="button" (click)="clickChangeTitle()"> Cambiar título</button>
 <router-outlet></router-outlet>

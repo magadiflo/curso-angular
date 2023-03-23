@@ -1,11 +1,11 @@
-import { Component, OnInit, DoCheck, AfterContentInit, ContentChild, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, DoCheck, AfterContentInit, ContentChild, AfterContentChecked, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-my-component2',
   templateUrl: './my-component2.component.html',
   styleUrls: ['./my-component2.component.scss']
 })
-export class MyComponent2Component implements OnInit, DoCheck, AfterContentInit, AfterContentChecked {
+export class MyComponent2Component implements OnInit, DoCheck, AfterContentInit, AfterContentChecked, OnDestroy {
 
   @ContentChild('childComponent2') contentChild: HTMLElement | undefined;
 
@@ -37,5 +37,9 @@ export class MyComponent2Component implements OnInit, DoCheck, AfterContentInit,
      */
     console.log('4° - 2° my-component2.component -> ngAfterContentChecked');
     console.log(this.contentChild);
+  }
+
+  ngOnDestroy(): void {
+    console.log('5° my-component2.component -> ngOnDestroy');
   }
 }
