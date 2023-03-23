@@ -14,8 +14,8 @@ export class MyComponent1Component implements OnInit, OnChanges {
   constructor() { }
   
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('2° my-component1.component -> ngOnChanges [Solo funciona cuando hay una propiedad decorada con @Input()]');
-    console.log(changes);
+    // console.log('2° my-component1.component -> ngOnChanges [Solo funciona cuando hay una propiedad decorada con @Input()]');
+    // console.log(changes);
   }
   
   ngOnInit(): void {

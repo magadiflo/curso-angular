@@ -9,15 +9,15 @@ export class AppComponent implements OnInit, DoCheck {
   title = 'curso-angular';
 
   constructor() {
-    console.log('1° app.component -> constructor');
+    // console.log('1° app.component -> constructor');
   }
 
   ngOnInit(): void {
-    console.log('3° app.component -> ngOnInit');
+    // console.log('3° app.component -> ngOnInit');
   }
 
   ngDoCheck(): void {
-    console.log('4° app.component -> ngDoCheck');
+    // console.log('4° app.component -> ngDoCheck');
   }
 
   getMessage(value: string): void {

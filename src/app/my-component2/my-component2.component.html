@@ -1,3 +1,13 @@
 <div class="container">
     <h2>My component 2</h2>
 </div>
+<!--*ng-content, permite insertar el contenido que se inserte en las etiquetas de este componente -->
+<!--*Por ejemplo, este componente es llamado en el app.component.html con las etiquetas -->
+<!--*<app-my-component2></app-my-component2>, entonces el contenido que se coloque dentro de dichas -->
+<!--*etiquetas, es decir de la siguiente forma: -->
+<!--*<app-my-component2>Contenido dentro de estas etiquetas....</app-my-component2>-->
+<!--*Dicho contenido será colocado a través de las etiquetas <ng-content></ng-content>-->
+<!--*A eso se le llamad proyección de contenido. -->
+<!--*Importante: si agregamos contenido dentro de las etiquetas de nuestro componente, necesariamente  -->
+<!--*dicho componente debe agregar las etiquetas <ng-content></ng-content> para poder mostrarlas. -->
+<ng-content></ng-content>
