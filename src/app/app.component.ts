@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck, ViewChild, AfterViewInit, AfterViewChecked } from '@angular/core';
-import { MyComponent2Component } from './my-component2/my-component2.component';
+import { MyComponent2Component } from './components/my-component2/my-component2.component';
 
 @Component({
   selector: 'app-root',
