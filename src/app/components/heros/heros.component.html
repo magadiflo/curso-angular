@@ -2,6 +2,9 @@
     <h1 #h1Title class="text-center">Registro de héroes</h1>
     <span>{{ title }}</span>
 
-    <input type="text" placeholder="Nombre" [disabled]="disabledInput">
+    <input #inputNombre type="text" placeholder="Nombre" [disabled]="disabledInput" (keyup)="keyUp($event)">
     <app-my-component4 [titulo]="title"></app-my-component4>
+
+    <button type="button" (click)="showMessage()">Guardar</button>
+    <span>{{ title }}</span>
 </div>
