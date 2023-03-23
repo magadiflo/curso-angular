@@ -9,12 +9,14 @@ export class HerosComponent implements OnInit, AfterViewInit {
 
   title = 'Hello World!';
   @ViewChild('h1Title') h1Title: ElementRef | undefined;
+  disabledInput = true;
 
   constructor() { }
 
   ngOnInit(): void {
     setTimeout(() => {
       this.title = 'Hola mundo en español!';
+      this.disabledInput = false;
     }, 1500);
   }
 

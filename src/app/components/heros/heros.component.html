@@ -1,5 +1,7 @@
 <div class="container">
     <h1 #h1Title class="text-center">Registro de héroes</h1>
     <span>{{ title }}</span>
-    <input type="text" placeholder="Nombre">
+
+    <input type="text" placeholder="Nombre" [disabled]="disabledInput">
+    <app-my-component4 [titulo]="title"></app-my-component4>
 </div>
