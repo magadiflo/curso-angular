@@ -1,11 +1,11 @@
-import { Component, OnInit, DoCheck, AfterContentInit, ContentChild } from '@angular/core';
+import { Component, OnInit, DoCheck, AfterContentInit, ContentChild, AfterContentChecked } from '@angular/core';
 
 @Component({
   selector: 'app-my-component2',
   templateUrl: './my-component2.component.html',
   styleUrls: ['./my-component2.component.scss']
 })
-export class MyComponent2Component implements OnInit, DoCheck, AfterContentInit {
+export class MyComponent2Component implements OnInit, DoCheck, AfterContentInit, AfterContentChecked {
 
   @ContentChild('childComponent2') contentChild: HTMLElement | undefined;
 
@@ -23,7 +23,19 @@ export class MyComponent2Component implements OnInit, DoCheck, AfterContentInit 
   }
 
   ngAfterContentInit(): void {
+    /**
+     * * Se encarga de detectar la proyección de contenido.
+     * * Sirve para detectar que ya se ha renderizado alguna etiqueta que se haya proyectado.
+     */
     console.log('4° - 1° my-component2.component -> ngAfterContentInit');
+    console.log(this.contentChild);
+  }
+
+  ngAfterContentChecked(): void {
+    /**
+     * * Verifica si la proyección que ha realizado ha sufrido algún cambio.
+     */
+    console.log('4° - 2° my-component2.component -> ngAfterContentChecked');
     console.log(this.contentChild);
   }
 }

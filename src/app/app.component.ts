@@ -7,6 +7,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 })
 export class AppComponent implements OnInit, DoCheck {
   title = 'curso-angular';
+  show = false;
 
   constructor() {
     // console.log('1° app.component -> constructor');
@@ -26,5 +27,6 @@ export class AppComponent implements OnInit, DoCheck {
 
   clickChangeTitle(): void {
     this.title = 'Título cambiado!!!';
+    this.show = true;
   }
 }
