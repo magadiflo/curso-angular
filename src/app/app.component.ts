@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, DoCheck, ViewChild, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { MyComponent2Component } from './my-component2/my-component2.component';
 
 @Component({
@@ -6,7 +6,7 @@ import { MyComponent2Component } from './my-component2/my-component2.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, DoCheck, AfterViewInit {
+export class AppComponent implements OnInit, DoCheck, AfterViewInit, AfterViewChecked {
   title = 'curso-angular';
   show = false;
 
@@ -27,7 +27,14 @@ export class AppComponent implements OnInit, DoCheck, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    //* Asegura que ya se renderizó la template
     console.log('4° - 3° app.component -> ngAfterViewInit');
+    console.log(this.viewChild);
+  }
+
+  ngAfterViewChecked(): void {
+    //* Verifica que si la plantilla renderizada sufre algún cambio
+    console.log('4° - 4° app.component -> ngAfterViewChecked');
     console.log(this.viewChild);
   }
 
