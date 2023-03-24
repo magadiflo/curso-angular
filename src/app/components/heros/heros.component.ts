@@ -7,7 +7,7 @@ import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angula
 })
 export class HerosComponent implements OnInit, AfterViewInit {
 
-  title = '';
+  title = 'Hello World';
   @ViewChild('h1Title') h1Title: ElementRef | undefined;
   @ViewChild('inputNombre') inputNombre: ElementRef | undefined;
   disabledInput = true;
@@ -16,7 +16,7 @@ export class HerosComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      // this.title = 'Hola mundo en español!';
+      this.title = 'Hola mundo en español!';
       this.disabledInput = false;
     }, 1500);
   }
@@ -35,6 +35,14 @@ export class HerosComponent implements OnInit, AfterViewInit {
 
     const input = this.inputNombre?.nativeElement as HTMLInputElement;
     this.title = input.value;
+  }
+
+  getMaxLength(): number {
+    return 4;
+  }
+
+  getChangeColor(): boolean {
+    return 'Hello World' == this.title;
   }
 
 }
