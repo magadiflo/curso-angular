@@ -9,4 +9,62 @@
     <button type="button" (click)="showMessage()" [class.cambiar-color]="getChangeColor()"
         [style.font-size]="'25px'">Guardar</button>
     <span>{{ title }}</span>
+    <hr>
+    <h3>Pipes</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>pipe</th>
+                <th>value</th>
+                <th>result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>uppercase</td>
+                <td>{{ title }}</td>
+                <td>{{ title | uppercase }}</td>
+            </tr>
+            <tr>
+                <td>lowercase</td>
+                <td>{{ title }}</td>
+                <td>{{ title | lowercase }}</td>
+            </tr>
+            <tr>
+                <td>slice:0:9</td>
+                <td>{{ title }}</td>
+                <td>{{ title | slice:0:9 }}</td>
+            </tr>
+            <tr>
+                <td>decimal => number:'1.2-2'</td>
+                <td>{{ pi }}</td>
+                <td>{{ pi | number:'1.2-2' }}</td>
+            </tr>
+            <tr>
+                <td>percent:'2.2-3'</td>
+                <td>{{ igv }}</td>
+                <td>{{ igv | percent:'2.2-3' }}</td>
+            </tr>
+            <tr>
+                <td>currency:'PEN':'symbol'</td>
+                <td>{{ salary }}</td>
+                <td>{{ salary | currency:'PEN':'symbol' }}</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>{{ currentDate }}</td>
+                <td>{{ currentDate | date:'dd/MM/yyyy hh:mm a' }}</td>
+            </tr>
+            <tr>
+                <td>json</td>
+                <td>{{ myJson }}</td>
+                <td>{{ myJson | json }}</td>
+            </tr>
+            <tr>
+                <td>async</td>
+                <td>{{ myPromise }}</td>
+                <td>{{ myPromise | async }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

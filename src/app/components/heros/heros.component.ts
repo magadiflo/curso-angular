@@ -11,6 +11,16 @@ export class HerosComponent implements OnInit, AfterViewInit {
   @ViewChild('h1Title') h1Title: ElementRef | undefined;
   @ViewChild('inputNombre') inputNombre: ElementRef | undefined;
   disabledInput = true;
+  pi: number = 3.14159265359;
+  igv: number = 0.18433;
+  salary: number = 3500;
+  currentDate = new Date();
+  myJson = { name: 'Martín', lastName: 'Díaz' };
+  myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Mostrando después de 3s (promesa)');
+    }, 3000);
+  });
 
   constructor() { }
 
