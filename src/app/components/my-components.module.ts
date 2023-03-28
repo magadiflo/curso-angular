@@ -7,13 +7,16 @@ import { MyComponent3Component } from './my-component3/my-component3.component';
 import { MyComponent4Component } from './my-component4/my-component4.component';
 import { HerosComponent } from './heros/heros.component';
 
+import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
+
 @NgModule({
   declarations: [
     MyComponent1Component,
     MyComponent2Component,
     MyComponent3Component,
     MyComponent4Component,
-    HerosComponent
+    HerosComponent,
+    CustomCurrencyPipe,
   ],
   imports: [
     CommonModule

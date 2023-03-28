@@ -65,6 +65,11 @@
                 <td>{{ myPromise }}</td>
                 <td>{{ myPromise | async }}</td>
             </tr>
+            <tr>
+                <td>customCurrency</td>
+                <td>{{ salary }}</td>
+                <td>{{ salary | customCurrency:'1.2-2' }}</td>
+            </tr>
         </tbody>
     </table>
 </div>
