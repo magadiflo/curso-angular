@@ -2,13 +2,13 @@
     <h1 #h1Title class="text-center">Registro de héroes</h1>
     <span>{{ title }}</span>
 
-    <input [attr.maxLength]="getMaxLength()" #inputNombre type="text" placeholder="Nombre" [disabled]="disabledInput"
-        (keyup)="keyUp($event)">
+    <input [(ngModel)]="title" [attr.maxLength]="getMaxLength()" type="text" placeholder="Nombre" [disabled]="disabledInput">
     <app-my-component4 [titulo]="title"></app-my-component4>
 
     <button type="button" (click)="showMessage()" [class.cambiar-color]="getChangeColor()"
         [style.font-size]="'25px'">Guardar</button>
-    <span>{{ title }}</span>
+    <span [ngClass]="{'cambiar-color-label': paintTitle}">{{ title }}</span>
+    <span [ngStyle]="{'color': 'red'}">{{ title }}</span>
     <hr>
     <h3>Pipes</h3>
     <table>

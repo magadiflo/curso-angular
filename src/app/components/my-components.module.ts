@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { MyComponent1Component } from './my-component1/my-component1.component';
 import { MyComponent2Component } from './my-component2/my-component2.component';
@@ -19,7 +20,8 @@ import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
     CustomCurrencyPipe,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
   ],
   exports: [
     MyComponent1Component,

@@ -22,12 +22,16 @@ export class HerosComponent implements OnInit, AfterViewInit {
     }, 3000);
   });
 
+  //* Para las directivas
+  paintTitle = false;
+
   constructor() { }
 
   ngOnInit(): void {
     setTimeout(() => {
       this.title = 'Hola mundo en español!';
       this.disabledInput = false;
+      this.paintTitle = true;
     }, 1500);
   }
 
@@ -48,7 +52,7 @@ export class HerosComponent implements OnInit, AfterViewInit {
   }
 
   getMaxLength(): number {
-    return 4;
+    return 50;
   }
 
   getChangeColor(): boolean {
