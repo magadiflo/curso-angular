@@ -7,6 +7,7 @@ import { MyComponent2Component } from './my-component2/my-component2.component';
 import { MyComponent3Component } from './my-component3/my-component3.component';
 import { MyComponent4Component } from './my-component4/my-component4.component';
 import { HerosComponent } from './heros/heros.component';
+import { HerosDirectiveStructComponent } from './heros-directive-struct/heros-directive-struct.component';
 
 import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
 
@@ -17,6 +18,7 @@ import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
     MyComponent3Component,
     MyComponent4Component,
     HerosComponent,
+    HerosDirectiveStructComponent,
     CustomCurrencyPipe,
   ],
   imports: [
@@ -27,6 +29,7 @@ import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
     MyComponent1Component,
     MyComponent2Component,
     HerosComponent,
+    HerosDirectiveStructComponent,
   ]
 })
 export class MyComponentsModule { }
