@@ -1,4 +1,19 @@
 <div class="container">
     <input type="text" placeholder="Nombre">
     <button type="button" *ngIf="showButtonSave" #btnGuardar>Guardar</button>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Heroe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hero of heroes">
+                <td>{{ hero.id }}</td>
+                <td>{{ hero.name }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

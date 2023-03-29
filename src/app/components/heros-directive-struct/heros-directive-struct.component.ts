@@ -10,6 +10,11 @@ export class HerosDirectiveStructComponent implements OnInit, AfterViewInit {
   @ViewChild('btnGuardar') btnGuardar: ElementRef<HTMLButtonElement> | undefined;
 
   showButtonSave = false;
+  heroes = [
+    { id: 1, name: 'SpiderMan' },
+    { id: 2, name: 'SuperMan' },
+    { id: 3, name: 'BatMan' },
+  ];
 
   constructor(private _detectChanges: ChangeDetectorRef) { }
 
