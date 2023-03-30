@@ -23,4 +23,11 @@
     <ul>
         <li *ngFor="let hero of heroes; trackBy:trackByHero">{{hero.name}}</li>
     </ul>
+    <hr>
+    <div [ngSwitch]="heroSelected.id">
+        <h3 *ngSwitchCase="1">[1] Este héroe es chévere!</h3>
+        <h3 *ngSwitchCase="2">[2] Este hérore es chévere!</h3>
+        <h3 *ngSwitchCase="3">[3] Este hérore es chévere!</h3>
+        <h3 *ngSwitchDefault>Salida por defecto!</h3>
+    </div>
 </div>

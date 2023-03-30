@@ -21,6 +21,7 @@ export class HerosDirectiveStructComponent implements OnInit, AfterViewInit {
     { id: 2, name: 'SuperMan' },
     { id: 3, name: 'BatMan' },
   ];
+  heroSelected: Hero = <Hero>{};
 
   constructor(private _detectChanges: ChangeDetectorRef) { }
 
@@ -53,7 +54,8 @@ export class HerosDirectiveStructComponent implements OnInit, AfterViewInit {
   }
 
   modifyHero(hero: Hero): void {
-    hero.name = 'Aquamán';
+    // hero.name = 'Aquamán';
+    this.heroSelected = hero;
   }
 
   modify(): void {
