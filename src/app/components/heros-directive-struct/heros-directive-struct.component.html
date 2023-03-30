@@ -1,19 +1,26 @@
 <div class="container">
-    <input type="text" placeholder="Nombre">
-    <button type="button" *ngIf="showButtonSave" #btnGuardar>Guardar</button>
+    <input type="text" [(ngModel)]="textoInput" placeholder="Nombre">
+    <button type="button" *ngIf="showButtonSave" #btnGuardar (click)="addHero()">Guardar</button>
     <hr>
     <table border="1">
         <thead>
             <tr>
                 <th>#</th>
                 <th>Heroe</th>
+                <th>Update</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let hero of heroes">
+            <tr *ngFor="let hero of heroes; trackBy:trackByHero">
                 <td>{{ hero.id }}</td>
                 <td>{{ hero.name }}</td>
+                <td><button type="button" (click)="modifyHero(hero)">Modify</button></td>
             </tr>
         </tbody>
     </table>
+    <hr>
+    <button type="button" (click)="modify()">Modify</button>
+    <ul>
+        <li *ngFor="let hero of heroes; trackBy:trackByHero">{{hero.name}}</li>
+    </ul>
 </div>

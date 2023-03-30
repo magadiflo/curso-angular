@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 
+interface Hero {
+  id: number;
+  name: string;
+}
+
 @Component({
   selector: 'app-heros-directive-struct',
   templateUrl: './heros-directive-struct.component.html',
@@ -10,7 +15,8 @@ export class HerosDirectiveStructComponent implements OnInit, AfterViewInit {
   @ViewChild('btnGuardar') btnGuardar: ElementRef<HTMLButtonElement> | undefined;
 
   showButtonSave = false;
-  heroes = [
+  textoInput = '';
+  heroes: Hero[] = [
     { id: 1, name: 'SpiderMan' },
     { id: 2, name: 'SuperMan' },
     { id: 3, name: 'BatMan' },
@@ -39,6 +45,33 @@ export class HerosDirectiveStructComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     console.log(this.btnGuardar);
+  }
+
+  addHero(): void {
+    const objectWithIdMax = this.heroes.reduce((prevHero, currentHero) => prevHero.id > currentHero.id ? prevHero : currentHero);
+    this.heroes.push({ id: objectWithIdMax.id + 1, name: this.textoInput });
+  }
+
+  modifyHero(hero: Hero): void {
+    hero.name = 'Aquamán';
+  }
+
+  modify(): void {
+    //* this.heroes[0].name = 'El hombre araña';
+    this.refreshHeroes();
+  }
+
+  //* En el html usamos el trackBy, para actualizar solo los elementos que se necesitan actualizar
+  trackByHero(index: number, hero: Hero): number {
+    return hero.id;
+  }
+
+  private refreshHeroes() {
+    this.heroes = [
+      { id: 1, name: 'SPIDERMAN' },
+      { id: 2, name: 'SuperMan' },
+      { id: 3, name: 'BATMAN' },
+    ];
   }
 
 }
