@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CardTvComponent } from './components/card-tv.component';
 
 import { OptionsTvModule } from '../options-tv/options-tv.module';
+import { DemoService } from '../services/demo.service';
 
 
 
@@ -17,6 +18,7 @@ import { OptionsTvModule } from '../options-tv/options-tv.module';
   imports: [
     CommonModule,
     OptionsTvModule,
-  ]
+  ],
+  providers: [DemoService]
 })
 export class CardTvModule { }
