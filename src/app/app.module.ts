@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MyComponentsModule } from './components/my-components.module';
+import { CardTvModule } from './card-tv/card-tv.module';
 
 //* Cambiar el locale de la app
 import localeEsPe from "@angular/common/locales/es-PE";
@@ -22,7 +23,8 @@ registerLocaleData(localeEsPe);
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MyComponentsModule
+    MyComponentsModule,
+    CardTvModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-PE' }
