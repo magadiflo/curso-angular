@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DemoService } from 'src/app/services/demo.service';
-
 @Component({
   selector: 'app-card-tv',
   templateUrl: './card-tv.component.html',
@@ -9,10 +7,9 @@ import { DemoService } from 'src/app/services/demo.service';
 })
 export class CardTvComponent implements OnInit {
 
-  constructor(private _demoService: DemoService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this._demoService.saludo('CardTvComponent');
   }
 
 }
