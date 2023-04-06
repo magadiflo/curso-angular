@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { OptionsTvComponent } from './components/options-tv.component';
 import { TotalModule } from '../total/total.module';
@@ -15,6 +16,7 @@ import { TotalModule } from '../total/total.module';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     TotalModule,
   ]
 })

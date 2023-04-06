@@ -1,0 +1,17 @@
+.card {
+    width: 15em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border: 1px solid gray;
+    padding: 15px 10px;
+    border-radius: 5px;
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.mat-card> :first-child {
+    text-align: center;
+}

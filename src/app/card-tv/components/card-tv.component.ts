@@ -12,4 +12,8 @@ export class CardTvComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  saveTv(): void {
+    console.log('Guardando...');
+  }
+
 }
