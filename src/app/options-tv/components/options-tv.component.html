@@ -1,6 +1,6 @@
 <div class="container">
     <div class="container__tv">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" [style.fill]="'black'" width="100%" height="100%">
+        <svg [ngStyle]="{'background-color': colorTv}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" [style.fill]="'black'" width="100%" height="100%">
             <path d="M0 0h24v24H0z" fill="none" />
             <path
                 d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z" />
@@ -14,21 +14,23 @@
 
     <div class="container__rack">
         <span>Rack</span>
-        <input type="checkbox" [(ngModel)]="optionsTv.rack" aria-label="With rack">
+        <input type="checkbox" [(ngModel)]="optionsTv.rack" aria-label="With rack" (ngModelChange)="changeRack()">
     </div>
 
     <div appearance="outline">
         <label for="size">Tamaño</label>
-        <select name="size" id="size" [(ngModel)]="optionsTv.tamanio">
+        <select name="size" id="size" [(ngModel)]="optionsTv.tamanio" (ngModelChange)="changeTamanio()">
             <option *ngFor="let size of sizes" [value]="size">{{ size }}</option>
         </select>
     </div>
 
     <div appearance="outline">
         <label for="resolucion">Resolución</label>
-        <select name="resolucion" id="resolucion" [(ngModel)]="optionsTv.resolution">
+        <select name="resolucion" id="resolucion" [(ngModel)]="optionsTv.resolution" (ngModelChange)="changeResolution()">
             <option *ngFor="let resolution of resolutions" [value]="resolution">{{ resolution }}</option>
         </select>
     </div>
     <app-total></app-total>
 </div>
+<hr>
+<pre>{{ optionsTv | json }}</pre>

@@ -1,4 +1,4 @@
 <div class="container">
     <span>Total</span>
-    <span>S/ 0.00</span>
+    <span>{{ calculateService.chanelCalculate | async | currency:'PEN' }}</span>
 </div>
