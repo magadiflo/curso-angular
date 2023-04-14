@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BadgeService } from 'src/app/common/services/badge.service';
+
 @Component({
   selector: 'app-card-tv',
   templateUrl: './card-tv.component.html',
@@ -7,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardTvComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _badgeService: BadgeService) { }
 
   ngOnInit(): void {
   }
 
   saveTv(): void {
-    console.log('Guardando...');
+    this._badgeService.addTv();
   }
 
 }
